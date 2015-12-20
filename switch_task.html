@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Recursion</title>
+</head>
+<body>
+	
+<script>
+	
+function randomInteger(min, max) {
+    var rand = min + Math.random() * (max + 1 - min);
+    rand = Math.floor(rand);
+    return rand;
+   }
+   	var arr=[];
+		for (var i = 0; i < 10; i++) {
+				arr[i]=[];
+		for (var j=0; j < 10; j++) {
+				arr[i][j]=randomInteger(1,100);
+			}
+		}
+console.table(arr);
+
+ function returnEdge (arrId,position) {
+ 	var result=[];
+ 	var edge = position;
+ 	switch (edge) {
+     case 'top': if (edge == 'top') {
+     	i=0;
+     	for (j = 0; j < arrId.length; j++) {
+     	result.push(arrId[0][j]);
+     }
+     }
+     break;
+   case 'bottom': if (edge == 'bottom') {
+   		i=9;
+   		for (j = 0; j < arrId.length; j++) {
+     	result.push(arrId[9][j]);
+     }
+     }
+    break;
+   case 'left':
+   case 'rigth':
+     if (edge == 'left') {
+        j=0;
+		for (var i = 0; i < arr.length; i++) {
+        result.push(arrId[i][0]);
+      }
+     } else if (edge == 'rigth') {
+        j=9;
+		for (var i = 0; i < arr.length; i++) {
+        result.push(arrId[i][9]);
+      }
+     }
+     break;
+   default:
+     return;
+}
+ 	return result;
+ }
+
+console.log(returnEdge(arr,'rigth'));
+</script>
+
+</body>
+</html>
