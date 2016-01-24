@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SeaBattle</title>
+</head>
+<body>
+	<script>
+
+/*Запрашивает ширину и высоту поля для «Морского боя»
+Создает двумерный массив c заданным размерами, в котором хранятся данные ячеек (field[5][3])
+Всем ячейкам присваивает значение - объект {chip: false, opened: false, msg: “Промазал!”}
+Содержит функции для задания и получения данных из поля:
+putChip(5,6);
+setMsg(7,8,’msg’);
+hit(9,10); //должно выводиться сообщение о подбитии корабля
+Ввод ошибочных данных (например, координат) обрабатывается выводом сообщений о некорректных данных.
+Проверка наличия непотопленных кораблей
+hasChips(); //возвращает true или false, если корабли остались или кончились.*/
+
+function BattleShips() {
+
+  var gameCell = { ship: false,
+                   opened: false,
+                   msg: 'Начало игры,расставьте корабли',
+                   placeble: true }
+
+   this.field = [],
+   
+   this.fillField = function (width,heigth) {
+
+			  width = +prompt("Введите ширину поля:", 10);
+
+			  heigth = +prompt("Введите высоту поля:",10);
+
+						for (var i = 0; i < heigth; i++) {
+					 		 this.field[i] = [];
+				    for (var j = 0; j < width; j++) {
+				   		 this.field[i].push(gameCell);
+					  	}
+						}
+					return this.field;
+			},
+
+   this.putShip = function(i,j) {
+        if (this.isValid.valid = true) {
+        this.field[i][j] = { ship: true,
+                             opened: false,
+                             msg: 'Корабль установлен',
+                             placeble: false }
+   	 		return this.field;
+        } else {
+          return this.setMessage.mess;
+        }
+   	 	},
+
+   this.setMessage = function() {
+    var mess;
+    if (this.isValid.valid = false) {
+      mess = "Ошибка ввода, введите корректные параметры!";
+     }
+     return mess;
+   },
+
+   this.isValid = function(i,j) {
+    var valid;
+    if (i <= this.field[i][j].length || j <= this.field[i][j].length) {
+       valid = true;
+      }
+      else {
+        return valid = false;
+      }
+    },
+
+   this.hit = function() {},
+
+   this.hasShips = function() {}
+
+}
+var bsh = new BattleShips();
+console.table(bsh.fillField());
+//battleships.putShip(1,1);
+console.table(bsh.putShip(1,1));
+console.table(bsh.putShip(11,10));
+console.table(bsh.field);
+
+
+
+	</script>
+
+
+
+</body>
+</html>

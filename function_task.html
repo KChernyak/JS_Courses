@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function</title>
+</head>
+<body>
+<script >
+/*ДЗ
+Написать функцию, которая находит в массиве значения, повторяющиеся два и более
+раз, и возвращает их.
+*/
+/*array = [15,20,45,78,35,15,48,45,96,84,20,39,10,13,19,77];
+
+function arrDouble (arrId)  {
+	var resultArray=[];
+	var a;
+	var b;
+
+	for (var i = 0; i < arrId.length; i++) {
+		if (arrId[0] == arrId[i]) {
+		a = arrId[i];
+		resultArray.push(arrId[i])
+	  }
+		for (var j = 0; j < arrId.length; j++)  {
+			if (a == arrId[j]) {
+				b = arrId[j];
+				resultArray.push(arrId[i]);
+			}
+		}
+	}
+	
+	return resultArray;
+}
+console.log(arrDouble(array));*/
+
+/*Написать функцию, которая принимает строку, например "я люблю джаваскрипт" и разворачивает ее задом наперед, а-ля «главрыба» - «абырвалг».
+
+Подсказки:
+0 - внутри самой функции создать переменную для результата (var result = ''; почему не просто  var result?)
+1 - пройти строку как массив из конца в начало (да, у строки тоже есть свойство length)
+2 - получать символ командой из строки методом str.charAt(i), где str -  внезапно строка, i - итерация цикла.
+3 - дописывать (+=) в результат каждый символ в цикле.
+4 - не забыть вернуть результат
+
+проверка: var abyrvalg = getReverseString(‘я люблю джаваскрипт!’);
+                   console.log(abyrvalg);
+*/
+function getReverseString (str) {
+	arr = str.split;
+	string = arr.reverse;
+	return string;
+}
+
+getReverseString('я люблю джаваскрипт!');
+</script>
+
+</body>
+</html>

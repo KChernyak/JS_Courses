@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+
+/*Переделать скрипт,чтобы
+стрелок выводит 10, а должен 0
+army[5](); // стрелок выводит 10...
+все стрелки выводят 10 вместо 0,1,2...9*/
+
+function makeArmy() {
+
+  var shooters = [];
+
+  for(var i = 0; i < 10; i++) {
+  	shooters.push(function(c) {
+  		c=i;
+  	      alert(c);
+    });
+  }
+
+  return shooters;
+
+}
+var army = makeArmy();
+
+army[5]();
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>11_lesson</title>
+</head>
+<body>
+<!-- Напишите функцию-конструктор Accumulator(startingValue). Объекты, которые она создает, должны хранить текущую сумму и прибавлять к ней то, что вводит посетитель.
+
+Более формально, объект должен:
+
+Хранить текущее значение в своём свойстве value. Начальное значение свойства value ставится конструктором равным startingValue.
+Метод read() вызывает prompt, принимает число и прибавляет его к свойству value.
+Таким образом, свойство value является текущей суммой всего, что ввел посетитель при вызовах метода read(), с учетом начального значения startingValue. -->
+<script>
+
+  function Accumulator(startingValue) {
+  var value = startingValue;
+
+  this.read = function () {
+  startingValue = +prompt("Please enter value:");
+	};
+
+  this.getResult = function () {
+    value = value + startingValue;
+  	return value;
+  };
+}
+var accum = new Accumulator(10);
+accum.read();
+console.log(accum.getResult());
+accum.read();
+console.log(accum.getResult());
+
+
+
+</script>
+
+</body>
+</html>

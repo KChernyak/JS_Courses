@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Function</title>
+</head>
+<body>
+
+<script>
+/*ДЗ
+Написать функцию, которая находит в массиве значения, повторяющиеся два и более
+раз, и возвращает их.*/
+
+var arr = [10,13,65,76,89,45,67,100,13,45,17,78,89];
+
+	function findDouble(arrId) {
+	var num = arrId[0];
+	var resultArr=[];
+	for (var i = 1; i < arrId.length; i++) {
+		if ( num != arrId[i]) {
+			 num = arrId[i];
+			 // resultArr.push(arrId[i]);
+			 } /*else if (num == arrId[i]) {
+			 	 	resultArr.push(num);
+			 }*/
+	for (var j = num; j < arrId.length; j++) {
+		if (num == arrId[j]) {
+			resultArr.push(num);
+				}
+			}
+		}
+/*	}
+	resultArr.push(num);*/
+	return resultArr;
+}
+console.log(findDouble(arr));
+</script>
+
+
+</body>
+</html>

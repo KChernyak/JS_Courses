@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Horse_task</title>
+</head>
+<body>
+	<script>
+ /*Создать конструктор Horse, который принимает имя лошади и создает объект со следующими свойствами и методами:
+// Свойства: */
+// -имя лошади
+// -пробег
+// Методы:
+// 	-функция бежать, которая принимает расстояние, как параметр функции, и увеличивает на это расстояние пробег
+// Создать двух лошадей и протестировать
+ 		function Horse(horseName) {
+ 			this.mileage = 0;
+ 			this.horseName = horseName;
+ 			this.run = function(dist) {
+ 			this.mileage += dist;
+ 			this.constructor.prototype.total +=dist;
+ 			}
+ 		}
+ 		Horse.prototype = {
+ 				total: 0,
+ 				constructor: Horse
+ 		}
+
+ 		var h1 = new Horse("Spirit");
+ 		h1.run(10);
+ 		console.log(h1);
+ 		var h2 = new Horse("Ruby");
+ 		h2.run(15);
+ 		console.log(h2);
+ 		console.log(h1.total);
+ 		console.log(h2.total);
+
+/////////////////////////////////////////////////////
+/*  Модифицируйте конструктор Horse следующим образом: добавьте свойство - усталость. Каждые 1 км пробега добавляет 1 единицу усталости. Когда усталость достигает 10 - лошадь должна отдохнуть 1 секунду. Реализуйте это в методе  - отдых, который принимает как параметр функции, метод  - который должен выполнятся после отдыха и параметры этого метода. Задача метода выводить сообщение “Лошадь отдыхает”. Задержку в 1 секунду реализуйте с помощью функции SetTimeout. После чего должна обнуляться усталость и  выполнятся метод, который пришел как параметр функции. */
+// Например: лошадь должна пробежать 8 км. На текущий момент усталость составляет 4 единицы. Когда лошадь пробежит 6 км - усталость достигнет 10 единиц. На этом моменте лошадь должна отдохнуть 1 секунду. Усталость при этом обнулится. И после отдыха лошадь должна добежать оставшиеся 2 км.
+function Horse(horseName) {
+	  var leftover;
+	  var	timeToRest;
+		this.mileage = 0;
+ 		this.tired = 0;
+ 		this.tiredness = 0;
+ 		this.horseName = horseName;
+ 	this.rest = function() {
+ 				this.tired = this.tired + 1;
+ 				this.tiredness = 0;
+ 			}
+
+ 	this.run = function(dist) {
+ 		this.mileage += dist;
+ 		for (this.mileage = 0; this.mileage < dist; this.mileage++) {
+				this.tiredness++;
+ 		if ( this.tiredness == 10) {
+ 			  leftover = dist - this.mileage;
+ 				timeToRest = setTimeout(this.rest(), 1000);
+ 			}
+ 		}
+ 		this.constructor.prototype.total +=dist;
+ 			}
+ 		}
+
+var h1 = new Horse("Bella");
+ 		h1.run(45);
+ 		console.log(h1);
+ 		var h2 = new Horse("JS");
+ 		h2.run(25);
+ 		console.log(h2);
+	</script>
+
+</body>
+</html>

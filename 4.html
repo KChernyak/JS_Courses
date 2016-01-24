@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+	<script>
+	
+function randomInteger(min, max) {
+    var rand = min + Math.random() * (max + 1 - min);
+    rand = Math.floor(rand);
+    return rand;
+}
+var arr=[];
+for (var i = 0; i < 10; i++) {
+	arr[i]=[];
+	for (var j=0; j < 10; j++) {
+		arr[i][j]=randomInteger(1,100);
+	}
+}
+console.table(arr);
+
+for (var i = 0; i < 10; i++) {
+		for (var j=0; j < 10; j++) {
+		if  ( arr[i][j] %5 != 0 ) {
+			arr[i][j]=0;
+		}
+	}
+}
+console.table(arr);
+
+var resultArr = arr[0];
+
+for (var i = 1; i < arr.length; i++) {
+	var lastIndex = arr[i].length - 1;
+	resultArr.push( arr[i][lastIndex] );
+}
+var lastArr = arr[arr.length - 1];
+for (var i = lastArr.length - 2; i >= 0; i--) {
+	resultArr.push( lastArr[i] );
+}
+for (var i = arr.length - 2; i > 0; i--) {
+	resultArr.push( arr[i][0] );
+}
+console.log(arr);
+
+</script>
+
+
+
+
+</body>
+</html>
